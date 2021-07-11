@@ -17,7 +17,7 @@ namespace RocketSience
 
         public Rectangle LandingArea { get; private set; }
         public Rectangle LandingPlatform { get; private set; }
-        public static Point LastRequestedLandingPoint { get; private set; }
+        public Point LastRequestedLandingPoint { get; private set; }
 
 
         /// <summary>
