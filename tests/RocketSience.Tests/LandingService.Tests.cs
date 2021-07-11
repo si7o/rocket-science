@@ -110,5 +110,20 @@ namespace RocketSience.Tests
                 Assert.Equal(LandingService.Clash, sut.CheckTrajectory(clashingPoint))
             );
         }
+
+        [Fact]
+        public void LandingService_remember_only_last_checked_Point()
+        {
+            var landingPlatform = new Rectangle(5, 5, 10, 10);
+            var point1 = new Point(7, 7);
+            var point2 = new Point(7, 8);
+
+            sut.Configure(landingPlatform);
+
+            sut.CheckTrajectory(point1);
+            sut.CheckTrajectory(point2);
+
+            Assert.Equal(point2, sut.LastRequestedLandingPoint);
+        }
     }
 }
